@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+       html,
+body * {
+ box-sizing: border-box;
+ font-family: 'Titillium Web', sans-serif;
+ -webkit-font-smoothing: antialiased;
+ text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
+body {
+ background: -webkit-linear-gradient(rgba(246, 247, 249, 0.8), rgba(246, 247, 249, 0.8)), url(https://upload.wikimedia.org/wikipedia/commons/8/8c/K2,_Mount_Godwin_Austen,_Chogori,_Savage_Mountain.jpg) no-repeat center center fixed;
+ background:  url(https://upload.wikimedia.org/wikipedia/commons/8/8c/K2,_Mount_Godwin_Austen,_Chogori,_Savage_Mountain.jpg) no-repeat center center fixed;
+ background-size: cover;
+}
+
+nav {
+ width: 100%;
+ height: 48px;
+ background: -webkit-linear-gradient(rgba(35, 43, 85, 0.35), rgba(35, 43, 85, 0.55));
+ background: linear-gradient( rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.55));
+ margin-left: auto;
+ margin-right: auto;
+ box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+ text-align: center;
+}
+
+nav ul li:hover > ul {
+ overflow: visible;
+ max-height: 1240px;
+ opacity: 1;
+}
+
+nav ul li:hover > ul li {
+}
+
+nav ul {
+ margin: 0;
+ list-style: none;
+ position: relative;
+ display: inline-table;
+}
+
+nav ul:after {
+ content: "";
+ clear: both;
+ display: block;
+}
+
+nav ul li {
+ float: left;
+ height: 48px;
+ line-height: 48px;
+ transition: background 0.3s ease;
+}
+
+nav ul li:hover {
+ background: rgba(0, 0, 0, 0.3);
+}
+
+nav ul li:hover > a {
+ color: #fff;
+}
+
+nav ul li a {
+ display: block;
+ padding: 0 40px;
+ color: #0e0d0dea;
+ text-decoration: none;
+}
+
+nav ul ul {
+ display: block;
+ overflow: hidden;
+ max-height: 0;
+ opacity: 0;
+ transition: opacity 0.3s ease;
+ 
+ background: -webkit-linear-gradient(rgba(35, 43, 85, 0.35), rgba(35, 43, 85, 0.55));
+ background: linear-gradient( White (255, 255, 255, 0.35), rgba(255, 255, 255, 0.55));
+ border-radius: 0px;
+ padding: 0;
+ position: absolute;
+ top: 100%;
+   box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.2);
+}
+
+nav ul ul li {
+ float: none;
+ position: relative;
+ 
+}
+
+nav ul ul li a {
+ padding: 0 40px;
+   color: #919191;
+ transition: all .5s ease;
+ white-space: nowrap;
+}
+
+nav ul ul ul {
+ position: absolute;
+ left: 100%;
+ top: 0;
+}
+
+.welcome {
+ font-size: 57.6px;
+ line-height: 64px;
+ font-family: 'Muli';
+ color: #ecf0f1;
+ height: 40px;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ margin-top: -15px;
+ margin-left: -165px;
+}
+.welcome:before {
+ content: '[';
+ position: absolute;
+ left: -30px;
+ line-height: 64px;
+}
+.welcome:after {
+ content: ']';
+ position: absolute;
+ right: -30px;
+ line-height: 64px;
+}
+.welcome:after,
+.welcome:before {
+ font-family: 'Muli';
+ color: #ACACAC;
+ font-weight: 500;
+ font-size: 64px;
+ animation: 2s linear 0s normal none infinite opacity;
+ -webkit-animation: 2s ease-out 0s normal none infinite opacity;
+ -moz-animation: 2s ease-out 0s normal none infinite opacity;
+ -o-animation: 2s ease-out 0s normal none infinite opacity;
+}
+.visible {
+ float: left;
+ font-weight: 600;
+ overflow: hidden;
+ height: 64px;
+}
+.welcome p {
+ display: inline;
+ float: left;
+ margin: 0;
+}
+.welcome ul {
+ margin-top: 0;
+ padding-left: 284px;
+ text-align: left;
+ list-style: none;
+ animation: 6s linear 0s normal none infinite change;
+ -webkit-animation: 6s linear 0s normal none infinite change;
+ -moz-animation: 6s linear 0s normal none infinite change;
+ -o-animation: 6s linear 0s normal none infinite change;
+}
+.welcome ul li {
+ line-height: 64px;
+ margin: 0;
+}
+@-webkit-keyframes opacity {
+ 0% {
+   opacity: 0;
+ }
+ 50% {
+   opacity: 1;
+ }
+ 100% {
+   opacity: 0;
+ }
+}
+@keyframes opacity {
+ 0% {
+   opacity: 0;
+ }
+ 50% {
+   opacity: 1;
+ }
+ 100% {
+   opacity: 0;
+ }
+}
+@-webkit-keyframes change {
+ 0% {
+   margin-top: 0;
+ }
+ 15% {
+   margin-top: 0;
+ }
+ 25% {
+   margin-top: -64px;
+ }
+ 40% {
+   margin-top: -64px;
+ }
+ 50% {
+   margin-top: -128px;
+ }
+ 65% {
+   margin-top: -128px;
+ }
+ 75% {
+   margin-top: -64px;
+ }
+ 85% {
+   margin-top: -64px;
+ }
+ 100% {
+   margin-top: 0;
+ }
+}
+@keyframes change {
+ 0% {
+   margin-top: 0;
+ }
+ 15% {
+   margin-top: 0;
+ }
+ 25% {
+   margin-top: -64px;
+ }
+ 40% {
+   margin-top: -64px;
+ }
+ 50% {
+   margin-top: -128px;
+ }
+ 65% {
+   margin-top: -128px;
+ }
+ 75% {
+   margin-top: -64px;
+ }
+ 85% {
+   margin-top: -64px;
+ }
+ 100% {
+   margin-top: 0;
+ }
+}
+   </style>
+   <style>
+    body {
+	margin: 0;
+	background-image: linear-gradient(90deg, #201A35, #0B0320);
+	color: #fff;
+	font-family: sans-serif;
+	display: flex;
+	align-items: center;
+	min-height: 100vh;
+}
+.slider {
+	width: 100%;
+}
+.slider input {
+	display: none;
+}
+.testimonials {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	min-height: 350px;
+	perspective: 1000px;
+	overflow: hidden;
+}
+.testimonials .item {
+	top: 0;
+	position: absolute;
+	box-sizing: border-box;
+	background-color: #0A0220;
+	padding: 30px;
+	width: 450px;
+	text-align: center;
+	transition: transform 0.4s;
+	-webkit-transform-style: preserve-3d;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+	user-select: none;
+	cursor: pointer;
+}
+.testimonials .item img {
+	width: 100px;
+	border-radius: 50%;
+	border: 13px solid #3B344D;
+}
+.testimonials .item p {
+	color: #ddd;
+}
+.testimonials .item h2 {
+	font-size: 14px;
+}
+.dots {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.dots label {
+	display: block;
+	height: 5px;
+	width: 5px;
+	border-radius: 50%;
+	cursor: pointer;
+	background-color: #413B52;
+	margin: 7px;
+	transition: transform 0.2s, color 0.2s;
+}
+
+/* First */
+#t-1:checked ~ .dots label[for="t-1"] {
+	transform: scale(2);
+	background-color: #fff;
+}
+#t-1:checked ~ .dots label[for="t-2"] {
+	transform: scale(1.5);
+}
+#t-1:checked ~ .testimonials label[for="t-1"] {
+	z-index: 4;
+}
+#t-1:checked ~ .testimonials label[for="t-2"] {
+	transform: translateX(300px) translateZ(-90px) rotateY(-15deg);
+	z-index: 3;
+}
+#t-1:checked ~ .testimonials label[for="t-3"] {
+	transform: translateX(600px) translateZ(-180px) rotateY(-25deg);
+	z-index: 2;
+}
+#t-1:checked ~ .testimonials label[for="t-4"] {
+	transform: translateX(900px) translateZ(-270px) rotateY(-35deg);
+	z-index: 1;
+}
+#t-1:checked ~ .testimonials label[for="t-5"] {
+	transform: translateX(1200px) translateZ(-360px) rotateY(-45deg);
+}
+
+/* Second */
+#t-2:checked ~ .dots label[for="t-1"] {
+	transform: scale(1.5);
+}
+#t-2:checked ~ .dots label[for="t-2"] {
+	transform: scale(2);
+	background-color: #fff;
+}
+#t-2:checked ~ .dots label[for="t-3"] {
+	transform: scale(1.5);
+}
+#t-2:checked ~ .testimonials label[for="t-1"] {
+	transform: translateX(-300px) translateZ(-90px) rotateY(15deg);
+}
+#t-2:checked ~ .testimonials label[for="t-2"] {
+	z-index: 3;
+}
+#t-2:checked ~ .testimonials label[for="t-3"] {
+	transform: translateX(300px) translateZ(-90px) rotateY(-15deg);
+	z-index: 2;
+}
+#t-2:checked ~ .testimonials label[for="t-4"] {
+	transform: translateX(600px) translateZ(-180px) rotateY(-25deg);
+	z-index: 1;
+}
+#t-2:checked ~ .testimonials label[for="t-5"] {
+	transform: translateX(900px) translateZ(-270px) rotateY(-35deg);
+}
+
+/* Third */
+#t-3:checked ~ .dots label[for="t-2"] {
+	transform: scale(1.5);
+}
+#t-3:checked ~ .dots label[for="t-3"] {
+	transform: scale(2);
+	background-color: #fff;
+}
+#t-3:checked ~ .dots label[for="t-4"] {
+	transform: scale(1.5);
+}
+#t-3:checked ~ .testimonials label[for="t-1"] {
+	transform: translateX(-600px) translateZ(-180px) rotateY(25deg);
+}
+#t-3:checked ~ .testimonials label[for="t-2"] {
+	transform: translateX(-300px) translateZ(-90px) rotateY(15deg);
+}
+#t-3:checked ~ .testimonials label[for="t-3"] {
+	z-index: 3;
+}
+#t-3:checked ~ .testimonials label[for="t-4"] {
+	transform: translateX(300px) translateZ(-90px) rotateY(-15deg);
+	z-index: 2;
+}
+#t-3:checked ~ .testimonials label[for="t-5"] {
+	transform: translateX(600px) translateZ(-180px) rotateY(-25deg);
+}
+
+/* Fourth */
+#t-4:checked ~ .dots label[for="t-3"] {
+	transform: scale(1.5);
+}
+#t-4:checked ~ .dots label[for="t-4"] {
+	transform: scale(2);
+	background-color: #fff;
+}
+#t-4:checked ~ .dots label[for="t-5"] {
+	transform: scale(1.5);
+}
+#t-4:checked ~ .testimonials label[for="t-1"] {
+	transform: translateX(-900px) translateZ(-270px) rotateY(35deg);
+}
+#t-4:checked ~ .testimonials label[for="t-2"] {
+	transform: translateX(-600px) translateZ(-180px) rotateY(25deg);
+}
+#t-4:checked ~ .testimonials label[for="t-3"] {
+	transform: translateX(-300px) translateZ(-90px) rotateY(15deg);
+	z-index: 2;
+}
+#t-4:checked ~ .testimonials label[for="t-4"] {
+	z-index: 3;
+}
+#t-4:checked ~ .testimonials label[for="t-5"] {
+	transform: translateX(300px) translateZ(-90px) rotateY(-15deg);
+}
+
+/* Fifth */
+#t-5:checked ~ .dots label[for="t-4"] {
+	transform: scale(1.5);
+}
+#t-5:checked ~ .dots label[for="t-5"] {
+	transform: scale(2);
+	background-color: #fff;
+}
+#t-5:checked ~ .testimonials label[for="t-1"] {
+	transform: translateX(-1200px) translateZ(-360px) rotateY(45deg);
+}
+#t-5:checked ~ .testimonials label[for="t-2"] {
+	transform: translateX(-900px) translateZ(-270px) rotateY(35deg);
+	z-index: 1;
+}
+#t-5:checked ~ .testimonials label[for="t-3"] {
+	transform: translateX(-600px) translateZ(-180px) rotateY(25deg);
+	z-index: 2;
+}
+#t-5:checked ~ .testimonials label[for="t-4"] {
+	transform: translateX(-300px) translateZ(-90px) rotateY(15deg);
+	z-index: 3;
+}
+#t-5:checked ~ .testimonials label[for="t-5"] {
+	z-index: 4;
+}
+   </style>
+   <style>
+    .grid-contaner{
+      display:auto;
+      column-gap: 50;
+       
+    }
+   </style>
+<head>
+<div class="grid-container">
+<body>
+   <html>
+<div class="grid-item">
+<head>
+ <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,300italic,400italic,600italic,600' rel='stylesheet' type='text/css'>
+ <link rel="Stylesheet" href="css/master.css" type="text/css" />
+ </style>
+
+ <link rel="Stylesheet" href="https://ianlunn.github.io/Hover/css/hover.css" type="text/css" />
+ 
+ <link rel="Stylesheet" href='https://fonts.googleapis.com/css?family=Muli' type='text/css'>
+</head>
+</body>
+</div>
+
+<body>
+  
+
+ <nav>
+   <ul>
+     <li><a href="index.html">Home</a></li>
+     <li><a href="Education.html">Education and Skills</a></li>
+     <li>
+       <a href="About.html">About</a>
+     </li>
+     <li><a href="Testimonial.html">Testimonial</a></li>
+     <li>
+       <a href="Contact.html">Contact</a>
+     </li>
+   </ul>
+   
+ </nav>
+</body>
+<div class="grid-container">
+<body>
+ <div class="slider">
+  <input type="radio" name="testimonial" id="t-1">
+  <input type="radio" name="testimonial" id="t-2">
+  <input type="radio" name="testimonial" id="t-3" checked>
+  <input type="radio" name="testimonial" id="t-4">
+  <input type="radio" name="testimonial" id="t-5">
+  <div class="testimonials">
+    <label class="item" for="t-1">
+      <img src="https://dummyimage.com/150" alt="picture">
+      <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
+      <h2>- Princy, Web Developer</h2>
+    </label>
+    <label class="item" for="t-2">
+      <img src="https://dummyimage.com/150" alt="picture">
+      <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
+      <h2>- Princy, Web Developer</h2>
+    </label>
+    <label class="item" for="t-3">
+      <img src="https://dummyimage.com/150" alt="picture">
+      <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
+      <h2>- Princy, Web Developer</h2>
+    </label>
+    <label class="item" for="t-4">
+      <img src="https://dummyimage.com/150" alt="picture">
+      <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
+      <h2>- Princy, Web Developer</h2>
+    </label>
+    <label class="item" for="t-5">
+      <img src="https://dummyimage.com/150" alt="picture">
+      <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
+      <h2>- Princy, Web Developer</h2>
+    </label>
+     </div>
+      <div class="dots">
+        <label for="t-1"></label>
+         <label for="t-2"></label>
+         <label for="t-3"></label>
+         <label for="t-4"></label>
+         <label for="t-5"></label>
+       </div>
+      </div>
+    </div>
+</div>
+</body>
+</html>

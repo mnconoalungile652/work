@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+body {
+	  background:#252b28 url(http://www.luismruiz.com/img/blured.jpg)no-repeat center center fixed;
+  	-webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+    padding-top:100px;
+}
+
+form {
+    margin-left:auto;
+    margin-right:auto;
+    width: 343px;
+    height: 433px;
+    padding:30px;
+    border: 1px solid rgba(0,0,0,.2);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    background: rgba(0, 0, 0, 0.5); 
+    -moz-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+    box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+    overflow: hidden; 
+}
+
+textarea{
+	  background: rgba(255, 255, 255, 0.4) url(http://luismruiz.com/img/gemicon_message.png) no-repeat scroll 16px 16px; 
+    width: 276px;
+    height: 110px;
+    border: 1px solid rgba(255,255,255,.6);
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; 
+    display:block;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size:18px;
+    color:#fff;
+    padding-left:45px;
+    padding-right:20px;
+    padding-top:12px;
+    margin-bottom:20px;
+    overflow:hidden;
+}
+
+input {
+    width: 276px;
+    height: 48px;
+    border: 1px solid rgba(255,255,255,.4);
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; 
+    display:block;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size:18px;
+    color:#fff;
+    padding-left:20px;
+    padding-right:20px;
+    margin-bottom:20px;
+}
+
+input[type=submit] {
+    cursor:pointer;
+}
+
+input.name {
+	  background: rgba(255, 255, 255, 0.4) url(http://luismruiz.com/img/gemicon_name.png) no-repeat scroll 16px 16px; 
+	  padding-left:45px;
+}
+
+input.email {
+	  background: rgba(255, 255, 255, 0.4) url(http://luismruiz.com/img/gemicon_email.png) no-repeat scroll 16px 20px;
+	  padding-left:45px;
+}
+
+input.message {
+	  background: rgba(255, 255, 255, 0.4) url(http://luismruiz.com/img/gemicon_message.png) no-repeat scroll 16px 16px;
+	  padding-left:45px;
+}
+
+::-webkit-input-placeholder {
+	  color: #fff;
+}
+
+:-moz-placeholder{ 
+    color: #fff; 
+}
+
+::-moz-placeholder {
+    color: #fff;
+}
+
+:-ms-input-placeholder {  
+	  color: #fff; 
+}
+
+input:focus, textarea:focus { 
+	  background-color: rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
+    -webkit-box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
+    box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
+	  overflow: hidden; 
+}
+
+.btn {
+	  width: 138px;
+	  height: 44px;
+	  -moz-border-radius: 4px;
+	  -webkit-border-radius: 4px;
+	  border-radius: 4px;
+	  float:right;
+    border: 1px solid #253737;
+    background: #416b68;
+    background: -webkit-gradient(linear, left top, left bottom, from(#6da5a3), to(#416b68));
+    background: -webkit-linear-gradient(top, #6da5a3, #416b68);
+    background: -moz-linear-gradient(top, #6da5a3, #416b68);
+    background: -ms-linear-gradient(top, #6da5a3, #416b68);
+    background: -o-linear-gradient(top, #6da5a3, #416b68);
+    background-image: -ms-linear-gradient(top, #6da5a3 0%, #416b68 100%);
+    padding: 15px 21px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: rgba(255,255,255,0.1) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
+    -moz-box-shadow: rgba(255,255,255,0.1) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
+    box-shadow: rgba(255,255,255,0.1) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
+    text-shadow: #333333 0 1px 0;
+    color: #e1e1e1;
+}
+
+.btn:hover {
+    border: 1px solid #253737;
+    text-shadow: #333333 0 1px 0;
+    background: #416b68;
+    background: -webkit-gradient(linear, left top, left bottom, from(#77b2b0), to(#416b68));
+    background: -webkit-linear-gradient(top, #77b2b0, #416b68);
+    background: -moz-linear-gradient(top, #77b2b0, #416b68);
+    background: -ms-linear-gradient(top, #77b2b0, #416b68);
+    background: -o-linear-gradient(top, #77b2b0, #416b68);
+    background-image: -ms-linear-gradient(top, #77b2b0 0%, #416b68 100%);
+    color: #fff;
+ }
+
+.btn:active {
+    margin-top:1px;
+    text-shadow: #333333 0 -1px 0;
+    border: 1px solid #253737;
+    background: #879c9c;
+    background: -webkit-gradient(linear, left top, left bottom, from(#416b68), to(#416b68));
+    background: -webkit-linear-gradient(top, #416b68, #609391);
+    background: -moz-linear-gradient(top, #416b68, #6da5a3);
+    background: -ms-linear-gradient(top, #416b68, #6da5a3);
+    background: -o-linear-gradient(top, #416b68, #6da5a3);
+    background-image: -ms-linear-gradient(top, #416b68 0%, #6da5a3 100%);
+    color: #fff;
+    -webkit-box-shadow: rgba(255,255,255,0) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
+    -moz-box-shadow: rgba(255,255,255,0) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
+    box-shadow: rgba(255,255,255,0) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
+   }
+
+
+   html,
+body * {
+  box-sizing: border-box;
+  font-family: 'Titillium Web', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
+body {
+  background: -webkit-linear-gradient(rgba(246, 247, 249, 0.8), rgba(246, 247, 249, 0.8)), url(https://upload.wikimedia.org/wikipedia/commons/8/8c/K2,_Mount_Godwin_Austen,_Chogori,_Savage_Mountain.jpg) no-repeat center center fixed;
+  background:  url(https://upload.wikimedia.org/wikipedia/commons/8/8c/K2,_Mount_Godwin_Austen,_Chogori,_Savage_Mountain.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+nav {
+  width: 100%;
+  height: 48px;
+  background: -webkit-linear-gradient(rgba(35, 43, 85, 0.35), rgba(35, 43, 85, 0.55));
+  background: linear-gradient( rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.55));
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+  text-align: center;
+}
+
+nav ul li:hover > ul {
+  overflow: visible;
+  max-height: 1240px;
+  opacity: 1;
+}
+
+nav ul li:hover > ul li {
+}
+
+nav ul {
+  margin: 0;
+  list-style: none;
+  position: relative;
+  display: inline-table;
+}
+
+nav ul:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+nav ul li {
+  float: left;
+  height: 48px;
+  line-height: 48px;
+  transition: background 0.3s ease;
+}
+
+nav ul li:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+nav ul li:hover > a {
+  color: #fff;
+}
+
+nav ul li a {
+  display: block;
+  padding: 0 40px;
+  color: #0e0d0dea;
+  text-decoration: none;
+}
+
+nav ul ul {
+  display: block;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  
+  background: -webkit-linear-gradient(rgba(35, 43, 85, 0.35), rgba(35, 43, 85, 0.55));
+  background: linear-gradient( White (255, 255, 255, 0.35), rgba(255, 255, 255, 0.55));
+  border-radius: 5px;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+    box-shadow: 0
+    px 2px 7px rgba(0, 0, 0, 0.2);
+}
+
+nav ul ul li {
+  float: none;
+  position: relative;
+  
+}
+
+nav ul ul li a {
+  padding: 0 40px;
+    color: #919191;
+  transition: all .5s ease;
+  white-space: nowrap;
+}
+
+nav ul ul ul {
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+
+.welcome {
+  font-size: 57.6px;
+  line-height: 64px;
+  font-family: 'Muli';
+  color: #ecf0f1;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -165px;
+}
+.welcome:before {
+  content: '[';
+  position: absolute;
+  left: -30px;
+  line-height: 64px;
+}
+.welcome:after {
+  content: ']';
+  position: absolute;
+  right: -30px;
+  line-height: 64px;
+}
+.welcome:after,
+.welcome:before {
+  font-family: 'Muli';
+  color: #ACACAC;
+  font-weight: 500;
+  font-size: 64px;
+  animation: 2s linear 0s normal none infinite opacity;
+  -webkit-animation: 2s ease-out 0s normal none infinite opacity;
+  -moz-animation: 2s ease-out 0s normal none infinite opacity;
+  -o-animation: 2s ease-out 0s normal none infinite opacity;
+}
+.visible {
+  float: left;
+  font-weight: 600;
+  overflow: hidden;
+  height: 64px;
+}
+.welcome p {
+  display: inline;
+  float: left;
+  margin: 0;
+}
+.welcome ul {
+  margin-top: 0;
+  padding-left: 284px;
+  text-align: left;
+  list-style: none;
+  animation: 6s linear 0s normal none infinite change;
+  -webkit-animation: 6s linear 0s normal none infinite change;
+  -moz-animation: 6s linear 0s normal none infinite change;
+  -o-animation: 6s linear 0s normal none infinite change;
+}
+.welcome ul li {
+  line-height: 64px;
+  margin: 0;
+}
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes change {
+  0% {
+    margin-top: 0;
+  }
+  15% {
+    margin-top: 0;
+  }
+  25% {
+    margin-top: -64px;
+  }
+  40% {
+    margin-top: -64px;
+  }
+  50% {
+    margin-top: -128px;
+  }
+  65% {
+    margin-top: -128px;
+  }
+  75% {
+    margin-top: -64px;
+  }
+  85% {
+    margin-top: -64px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+@keyframes change {
+  0% {
+    margin-top: 0;
+  }
+  15% {
+    margin-top: 0;
+  }
+  25% {
+    margin-top: -64px;
+  }
+  40% {
+    margin-top: -64px;
+  }
+  50% {
+    margin-top: -128px;
+  }
+  65% {
+    margin-top: -128px;
+  }
+  75% {
+    margin-top: -64px;
+  }
+  85% {
+    margin-top: -64px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+
+    </style>
+    
+</head>
+<body>
+    <html>
+
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,300italic,400italic,600italic,600' rel='stylesheet' type='text/css'>
+  <link rel="Stylesheet" href="css/master.css" type="text/css" />
+  </style>
+
+  <link rel="Stylesheet" href="https://ianlunn.github.io/Hover/css/hover.css" type="text/css" />
+  
+  <link rel="Stylesheet" href='https://fonts.googleapis.com/css?family=Muli' type='text/css'>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Education.html">Education and Skills</a></li>
+      <li>
+        <a href="About.html">About</a>
+      </li>
+      <li><a href="Testimonial.html">Testimonial</a></li>
+      <li>
+        <a href="Contact.html">Contact</a>
+      </li>
+    </ul>
+    
+  </nav>
+<body>
+    <form>
+		<input name="name" placeholder="What is your name?" class="name" required />
+		<input name="emailaddress" placeholder="What is your email?" class="email" type="email" required />
+    <textarea rows="4" cols="50" name="subject" placeholder="Please enter your message" class="message" required></textarea>
+    <input name="submit" class="btn" type="submit" value="Send" />
+</form>
+</body>
+</body>
+
+</html>
+ </body>
+ </html>
+

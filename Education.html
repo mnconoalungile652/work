@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: #b4b4b6;
+  font-size: 14px;
+  line-height: 22px;
+  color: #555555;
+}
+
+.bold {
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.semi-bold {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.resume {
+  width: 800px;
+  height: auto;
+  display: flex;
+  margin: 50px auto;
+}
+
+.resume .resume_left {
+  width: 280px;
+  background: #747677;
+  width: 100%;
+}
+
+.resume .resume_left .resume_profile {
+  width: 100%;
+  height: 280px;
+}
+
+.resume .resume_left .resume_profile img {
+  width: 100%;
+  height: 100%;
+}
+
+.resume .resume_left .resume_content {
+  padding: 0 25px;
+}
+
+.resume .title {
+  margin-bottom: 20px;
+}
+
+.resume .resume_left .bold {
+  color: #fff;
+}
+
+.resume .resume_left .regular {
+  color: #b1eaff;
+}
+
+.resume .resume_item {
+  padding: 25px 0;
+  border-bottom: 2px solid #b1eaff;
+}
+
+.resume .resume_left .resume_item:last-child,
+.resume .resume_right .resume_item:last-child {
+  border-bottom: 0px;
+}
+
+.resume .resume_left ul li {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.resume .resume_left ul li:last-child {
+  margin-bottom: 0;
+}
+
+.resume .resume_left ul li .icon {
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  color: #0bb5f4;
+  border-radius: 50%;
+  margin-right: 15px;
+  font-size: 16px;
+  position: relative;
+}
+
+.resume .icon i,
+.resume .resume_right .resume_hobby ul li i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.resume .resume_left ul li .data {
+  color: #b1eaff;
+}
+
+.resume .resume_left .resume_skills ul li {
+  display: flex;
+  margin-bottom: 10px;
+  color: #b1eaff;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resume .resume_left .resume_skills ul li .skill_name {
+  width: 25%;
+}
+
+.resume .resume_left .resume_skills ul li .skill_progress {
+  width: 60%;
+  margin: 0 5px;
+  height: 5px;
+  background: #009fd9;
+  position: relative;
+}
+
+.resume .resume_left .resume_skills ul li .skill_per {
+  width: 15%;
+}
+
+.resume .resume_left .resume_skills ul li .skill_progress span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #fff;
+}
+
+.resume .resume_left .resume_social .semi-bold {
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.resume .resume_right {
+  width: 520px;
+  background: #fff;
+  padding: 25px;
+}
+
+.resume .resume_right .bold {
+  color: #0bb5f4;
+}
+
+.resume .resume_right .resume_work ul,
+.resume .resume_right .resume_education ul {
+  padding-left: 40px;
+  overflow: hidden;
+}
+
+.resume .resume_right ul li {
+  position: relative;
+}
+
+.resume .resume_right ul li .date {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.resume .resume_right ul li .info {
+  margin-bottom: 20px;
+}
+
+.resume .resume_right ul li:last-child .info {
+  margin-bottom: 0;
+}
+
+.resume .resume_right .resume_work ul li:before,
+.resume .resume_right .resume_education ul li:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -25px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 2px solid #0bb5f4;
+}
+
+.resume .resume_right .resume_work ul li:after,
+.resume .resume_right .resume_education ul li:after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: -21px;
+  width: 2px;
+  height: 115px;
+  background: #0bb5f4;
+}
+
+.resume .resume_right .resume_hobby ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.resume .resume_right .resume_hobby ul li {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #0bb5f4;
+  border-radius: 50%;
+  position: relative;
+  color: #0bb5f4;
+}
+
+.resume .resume_right .resume_hobby ul li i {
+  font-size: 30px;
+}
+
+.resume .resume_right .resume_hobby ul li:before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  right: -52px;
+  width: 50px;
+  height: 2px;
+  background: #0bb5f4;
+}
+
+.resume .resume_right .resume_hobby ul li:last-child:before {
+  display: none;
+}
+html,
+body * {
+  box-sizing: border-box;
+  font-family: 'Titillium Web', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
+body {
+  background: -webkit-linear-gradient(rgba(246, 247, 249, 0.8), rgba(246, 247, 249, 0.8)), url(https://upload.wikimedia.org/wikipedia/commons/8/8c/K2,_Mount_Godwin_Austen,_Chogori,_Savage_Mountain.jpg) no-repeat center center fixed;
+  background:  url(https://upload.wikimedia.org/wikipedia/commons/8/8c/K2,_Mount_Godwin_Austen,_Chogori,_Savage_Mountain.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+nav {
+  width: 100%;
+  height: 48px;
+  background: -webkit-linear-gradient(rgba(35, 43, 85, 0.35), rgba(35, 43, 85, 0.55));
+  background: linear-gradient( rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.55));
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+  text-align: center;
+}
+
+nav ul li:hover > ul {
+  overflow: visible;
+  max-height: 1240px;
+  opacity: 1;
+}
+
+nav ul li:hover > ul li {
+}
+
+nav ul {
+  margin: 0;
+  list-style: none;
+  position: relative;
+  display: inline-table;
+}
+
+nav ul:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+nav ul li {
+  float: left;
+  height: 48px;
+  line-height: 48px;
+  transition: background 0.3s ease;
+}
+
+nav ul li:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+nav ul li:hover > a {
+  color: #fff;
+}
+
+nav ul li a {
+  display: block;
+  padding: 0 40px;
+  color: #0e0d0dea;
+  text-decoration: none;
+}
+
+nav ul ul {
+  display: block;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  
+  background: -webkit-linear-gradient(rgba(35, 43, 85, 0.35), rgba(35, 43, 85, 0.55));
+  background: linear-gradient( White (255, 255, 255, 0.35), rgba(255, 255, 255, 0.55));
+  border-radius: 0px;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.2);
+}
+
+nav ul ul li {
+  float: none;
+  position: relative;
+  
+}
+
+nav ul ul li a {
+  padding: 0 40px;
+    color: #919191;
+  transition: all .5s ease;
+  white-space: nowrap;
+}
+
+nav ul ul ul {
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+
+.welcome {
+  font-size: 57.6px;
+  line-height: 64px;
+  font-family: 'Muli';
+  color: #ecf0f1;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -165px;
+}
+.welcome:before {
+  content: '[';
+  position: absolute;
+  left: -30px;
+  line-height: 64px;
+}
+.welcome:after {
+  content: ']';
+  position: absolute;
+  right: -30px;
+  line-height: 64px;
+}
+.welcome:after,
+.welcome:before {
+  font-family: 'Muli';
+  color: #ACACAC;
+  font-weight: 500;
+  font-size: 64px;
+  animation: 2s linear 0s normal none infinite opacity;
+  -webkit-animation: 2s ease-out 0s normal none infinite opacity;
+  -moz-animation: 2s ease-out 0s normal none infinite opacity;
+  -o-animation: 2s ease-out 0s normal none infinite opacity;
+}
+.visible {
+  float: left;
+  font-weight: 600;
+  overflow: hidden;
+  height: 64px;
+}
+.welcome p {
+  display: inline;
+  float: left;
+  margin: 0;
+}
+.welcome ul {
+  margin-top: 0;
+  padding-left: 284px;
+  text-align: left;
+  list-style: none;
+  animation: 6s linear 0s normal none infinite change;
+  -webkit-animation: 6s linear 0s normal none infinite change;
+  -moz-animation: 6s linear 0s normal none infinite change;
+  -o-animation: 6s linear 0s normal none infinite change;
+}
+.welcome ul li {
+  line-height: 64px;
+  margin: 0;
+}
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes change {
+  0% {
+    margin-top: 0;
+  }
+  15% {
+    margin-top: 0;
+  }
+  25% {
+    margin-top: -64px;
+  }
+  40% {
+    margin-top: -64px;
+  }
+  50% {
+    margin-top: -128px;
+  }
+  65% {
+    margin-top: -128px;
+  }
+  75% {
+    margin-top: -64px;
+  }
+  85% {
+    margin-top: -64px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+@keyframes change {
+  0% {
+    margin-top: 0;
+  }
+  15% {
+    margin-top: 0;
+  }
+  25% {
+    margin-top: -64px;
+  }
+  40% {
+    margin-top: -64px;
+  }
+  50% {
+    margin-top: -128px;
+  }
+  65% {
+    margin-top: -128px;
+  }
+  75% {
+    margin-top: -64px;
+  }
+  85% {
+    margin-top: -64px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+    
+    </style>
+</head>
+<body>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+<div class="resume">
+   <div class="resume_left">
+     <div class="resume_profile">
+       <img src="me.jpg" alt="profile_pic">
+     </div>
+     <div class="resume_content">
+       <div class="resume_item resume_info">
+         <div class="title">
+           <p class="bold">MNCONO ALUNGILE</p>
+           <p class="regular">Programer</p>
+         </div>
+         <ul>
+           <li>
+             <div class="icon">
+               <i class="fas fa-map-signs"></i>
+             </div>
+             <div class="data">
+               Twazi , Spaqen <br /> Flagstaff
+             </div>
+           </li>
+           <li>
+             <div class="icon">
+               <i class="fas fa-mobile-alt"></i>
+             </div>
+             <div class="data">
+               +27 73 490 5690
+             </div>
+           </li>
+           <li>
+             <div class="icon">
+               <i class="fas fa-envelope"></i>
+             </div>
+             <div class="data">
+               mnconoalungile652@gmail.com
+             </div>
+           </li>
+           <li>
+             <div class="icon">
+               <i class="fab fa-weebly"></i>
+             </div>
+             <div class="data">
+               www.mncono.com
+             </div>
+           </li>
+         </ul>
+       </div>
+       <div class="resume_item resume_skills">
+         <div class="title">
+           <p class="bold">skill's</p>
+         </div>
+         <ul>
+           <li>
+             <div class="skill_name">
+               HTML
+             </div>
+             <div class="skill_progress">
+               <span style="width: 80%;"></span>
+             </div>
+             <div class="skill_per">80%</div>
+           </li>
+           <li>
+             <div class="skill_name">
+               CSS
+             </div>
+             <div class="skill_progress">
+               <span style="width: 70%;"></span>
+             </div>
+             <div class="skill_per">70%</div>
+           </li>
+           <li>
+             <div class="skill_name">
+             Technical Programing
+             </div>
+             <div class="skill_progress">
+               <span style="width: 90%;"></span>
+             </div>
+             <div class="skill_per">90%</div>
+           </li>
+           <li>
+             <div class="skill_name">
+               Software Development
+             </div>
+             <div class="skill_progress">
+               <span style="width: 60%;"></span>
+             </div>
+             <div class="skill_per">60%</div>
+           </li>
+           <li>
+             <div class="skill_name">
+               SQL
+             </div>
+             <div class="skill_progress">
+               <span style="width: 88%;"></span>
+             </div>
+             <div class="skill_per">88%</div>
+           </li>
+         </ul>
+       </div>
+       <div class="resume_item resume_social">
+         <div class="title">
+           <p class="bold">Social</p>
+         </div>
+         <ul>
+           <li>
+             <div class="icon">
+               <i class="fab fa-facebook-square"></i>
+             </div>
+             <div class="data">
+               <p class="semi-bold">Facebook</p>
+               <p>Balungile Mncono@facebook</p>
+             </div>
+           </li>
+           <li>
+             <div class="icon">
+               <i class="fab fa-twitter-square"></i>
+             </div>
+             <div class="data">
+               <p class="semi-bold">Twitter</p>
+               <p>mncono@twitter</p>
+             </div>
+           </li>
+           <li>
+             <div class="icon">
+               <i class="fab fa-youtube"></i>
+             </div>
+             <div class="data">
+               <p class="semi-bold">Youtube</p>
+               <p>a@youtube</p>
+             </div>
+           </li>
+           <li>
+             <div class="icon">
+               <i class="fab fa-linkedin"></i>
+             </div>
+             <div class="data">
+               <p class="semi-bold">Linkedin</p>
+               <p>Alungile@linkedin</p>
+             </div>
+           </li>
+         </ul>
+       </div>
+     </div>
+  </div>
+  <div class="resume_right">
+    <div class="resume_item resume_about">
+        <div class="title">
+           <p class="bold">About us</p>
+         </div>
+        <p>
+          Ayanda
+        </div>
+    <div class="resume_item resume_work">
+        <div class="title">
+           <p class="bold">Work Experience</p>
+         </div>
+        
+            <li>
+              <div class="date">2021 - 2022</div>
+              <div class="info">
+                     <p class="semi-bold">Writing Center Assistant</p> 
+                  <p>I was dealing with academic writing. Helping students with their assignments, projects, research, etc..</p>
+                </div>
+            </li>
+           
+    </div>
+    <div class="resume_item resume_education">
+      <div class="title">
+           <p class="bold">Education</p>
+         </div>
+      <ul>
+            <li>
+                <div class="date">2018 - 2021</div> 
+                <div class="info">
+                     <p class="semi-bold">Nip: Software Development(walter sisulu university) </p> 
+                  <p>I was majoring in the following modules, Information Systems and Software Development </p>
+                  <p>I am curently doing Advanced Diploma in Application Software </p>
+                </div>
+            </li>
+            <li>
+              <div class="date">2015 - 2017</div>
+              <div class="info">
+                     <p class="semi-bold">Jikindaba High</p> 
+                  <p>I was doing a class of A which includes the following subjects, Maths, Physical Sciences, Agricultural Sciences, Life Science, Life Oreintation, and Xhosa. English I was doing it as first additional language. </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="resume_item resume_hobby">
+      <div class="title">
+           <p class="bold">Hobby</p>
+         </div>
+       <ul>
+         <li><i class="fas fa-book"></i></li>
+         <li><i class="fas fa-gamepad"></i></li>
+         <li><i class="fas fa-music"></i></li>
+         <li><i class="fab fa-pagelines"></i></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>
